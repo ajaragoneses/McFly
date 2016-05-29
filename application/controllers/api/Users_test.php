@@ -1,5 +1,5 @@
 <?php
-class Notes_test extends CI_Controller {
+class Users_test extends CI_Controller {
 
 	private function init_test(){
 		$this->load->library('unit_test');
@@ -7,27 +7,27 @@ class Notes_test extends CI_Controller {
         $str = '{rows}{item} : {result}<br />{/rows}<br/>';
         $this->unit->set_template($str); 
 
-        $this->load->model('notes');
+        $this->load->model('users');
 	}
 
 	private function getterTest(){
-		$test = $this->notes->getAttr('table');
-		$expected_result = "notes";
+		$test = $this->users->getAttr('table');
+		$expected_result = "users";
 		$test_name = "getter table name test";
 		$this->unit->run($test, $expected_result, $test_name);
 	}
 
 	private function setterTest(){
-		$this->notes->setAttr('note', "BLRBLRBLRPOIPOIPOI");
-		$test = $this->notes->getAttr('note');
-		$expected_result = "BLRBLRBLRPOIPOIPOI";
+		$this->users->setAttr('email', "biff@example.com");
+		$test = $this->users->getAttr('email');
+		$expected_result = "biff@example.com";
 		$test_name = "setter table name test";
 		$this->unit->run($test, $expected_result, $test_name);
 	}
 
 	private function selectTest(){
-		$test = $this->notes->get('1')->note;
-		$expected_result = "\"Nadie... me llama... ¡gallina!\"";
+		$test = $this->users->get('1')->email;
+		$expected_result = "martymcfly@example.com";
 		$test_name = "Simple select test";
 		$this->unit->run($test, $expected_result, $test_name);
 	}
