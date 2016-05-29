@@ -19,7 +19,12 @@ class GenericModel extends CI_Model {
         //var_dump(__METHOD__);
         if (property_exists($this, $property)) {
             $this->$property = $value;
+            $this->db->set($this);
         }
+    }
+
+    public function set($array) {
+        $this->db->set($array);
     }
 
     public function get($id){
