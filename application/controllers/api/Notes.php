@@ -10,11 +10,16 @@ class Notes extends REST_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->model('notes_model');
     }
 
     public function notes_get()
     {
-        $this->set_response(NULL, REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+        $id = $this->get('id');
+        if ($id === NULL){
+            $notes_ret = $this->notes_model->get_all();
+            $this->set_response($notes_ret, REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+        }
     }
 
     public function notes_post()

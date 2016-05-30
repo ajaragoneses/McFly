@@ -54,4 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
 $route['api/notes/notes/(:num)'] = 'api/notes/notes/id/$1';
+$route['api/notes/notes/(:num)'] = 'api/notesController/notes/id/$1';
 $route['api/notes/notes/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/notes/notes/id/$1/format/$3$4'; 

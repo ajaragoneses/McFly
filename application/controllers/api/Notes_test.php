@@ -7,7 +7,7 @@ class Notes_test extends CI_Controller {
         $str = '{rows}{item} : {result}<br />{/rows}<br/>';
         $this->unit->set_template($str); 
 
-        $this->load->model('notes');
+        $this->load->model('notes_model');
 	}
 
 	private function getterTest(){
