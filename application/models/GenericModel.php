@@ -36,8 +36,8 @@ class GenericModel extends CI_Model {
         return $query->result();
     }
 
-    public function insert() {
-        $this->db->insert($this->table, $this);
+    public function insert($obj) {
+        $this->db->insert($this->table, $obj);
     }
 
     public function update($id) {

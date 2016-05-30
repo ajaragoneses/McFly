@@ -13,4 +13,9 @@ class Notes_model extends GenericModel {
         $this->load->database();
     }
 
+    public function add_fav($user, $id){
+    	$query = "INSERT INTO `favorites` (`user_id`, `notes_id`) VALUES('".$user."', '".$id."');";
+    	$this->db->query($query);
+    }
+
 }
